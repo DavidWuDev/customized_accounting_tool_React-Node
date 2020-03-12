@@ -1,0 +1,51 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env DEBUG=app:* nodemon --watch 'src/**/*' -e ts --exec ./node_modules/.bin/ts-node -r tsconfig-paths/register ./src/index.ts",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
+    "test": "mocha --require ts-node/register '**/*.spec.ts'"
+  },
+  "keywords": [],
+  "author": "David Wu",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "^2.2.3",
+    "@koa/multer": "^2.0.0",
+    "config": "^3.1.0",
+    "debug": "^4.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-mount": "^4.0.0",
+    "koa-router": "^7.4.0",
+    "koa-send": "^5.0.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.5.11",
+    "multer": "^1.4.2",
+    "pdf-parse": "^1.1.1",
+    "pdf2json": "^1.1.8"
+  },
+  "devDependencies": {
+    "@types/config": "0.0.34",
+    "@types/debug": "^4.1.4",
+    "@types/jsonwebtoken": "^8.3.4",
+    "@types/koa": "^2.0.48",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-mount": "^3.0.1",
+    "@types/koa-router": "^7.0.40",
+    "@types/koa-send": "^4.1.2",
+    "@types/koa__cors": "^2.2.3",
+    "@types/mocha": "^5.2.7",
+    "@types/mongoose": "^5.5.3",
+    "cross-env": "^5.2.1",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.2.0",
+    "tsconfig-paths": "^3.8.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.5.1"
+  }
+}

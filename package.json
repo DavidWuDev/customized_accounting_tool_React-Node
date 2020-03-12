@@ -1,0 +1,37 @@
+{
+  "name": "cashflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run link && npm run start:backend",
+    "install": "npm run install:backend && npm run install:portal",
+    "install:backend": "cd backend && npm install && npm install --only=dev && cd -",
+    "install:portal": "cd portal && yarn --production=false && cd -",
+    "start:portal": "yarn --cwd ./portal start",
+    "start:backend": "cd backend && npm start && cd -",
+    "lint:fix": "npm run lint:backend:fix && npm run lint:portal:fix",
+    "lint:backend:fix": "cd backend && npm run lint -- --fix && cd -",
+    "lint:portal:fix": "cd portal && yarn lint --fix && cd -",
+    "lint": "npm run lint:backend && npm run lint:portal",
+    "lint:backend": "cd backend && npm run lint && cd -",
+    "lint:portal": "cd portal && yarn lint && cd -",
+    "build": "npm run link && npm run build:portal && npm run unlink",
+    "build:portal": "cd portal && yarn build && cd --",
+    "link": "node scripts/create-shared-symlinks.js",
+    "unlink": "node scripts/remove-shared-symlinks.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x",
+    "yarn": "1.x"
+  },
+  "cacheDirectories": [
+    "backend/node_modules",
+    "portal/node_modules"
+  ],
+  "keywords": [],
+  "author": "David Wu",
+  "license": "ISC"
+}
